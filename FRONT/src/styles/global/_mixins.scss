@@ -1,0 +1,17 @@
+@mixin display-info($display, $direction, $justify, $align) {
+  display: $display;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin spaces($margin, $padding, $gap) {
+  margin: $margin;
+  padding: $padding;
+  gap: $gap;
+}
+
+@mixin sizes($width, $height) {
+  width: $width;
+  height: $height;
+}

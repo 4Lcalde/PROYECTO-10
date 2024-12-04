@@ -1,0 +1,19 @@
+//!BORDES
+%border-principal {
+  border: 1px solid $color-borde-principal;
+  border-radius: 5px;
+}
+
+//!DISPLAY FLEX COLUM
+%flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+//!FONDO MOVIL
+%fondo-movil {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}

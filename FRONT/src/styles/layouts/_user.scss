@@ -1,0 +1,73 @@
+.section-user-page {
+  @include display-info(flex, column, space-around, center);
+  @include spaces($margen-mediano, 0, $gap-grande);
+  min-height: 90svh;
+
+  .div-img-user {
+    @include display-info(flex, column, center, center);
+    @include sizes(100%, auto);
+    position: relative;
+    gap: $gap-mediano;
+
+    .div-img-Container {
+      border-radius: 50%;
+      @include display-info(flex, column, center, center);
+      @include sizes(200px, 200px);
+      overflow: hidden;
+
+      .img-user {
+        cursor: pointer;
+        @include sizes(100%, 100%);
+        object-fit: cover;
+        overflow: hidden;
+
+        &:hover {
+          transform: scale(1.1);
+          transition: $transicion-principal;
+          filter: brightness(0.7);
+        }
+      }
+    }
+  }
+
+  .article-user-page {
+    @include display-info(flex, column, center, center);
+    gap: $gap-pequeno;
+
+    .div-data-user {
+      @include display-info(flex, column, center, center);
+      gap: $gap-pequeno;
+    }
+  }
+
+  .p-user-info {
+    text-transform: capitalize;
+  }
+
+  .button {
+    @extend %button-principal;
+  }
+}
+
+.div-buttons-user-page {
+  @include display-info(flex, row, center, center);
+
+  gap: $gap-ExtraGrande;
+
+  .button {
+    @extend %button-principal;
+    &:last-child {
+      background-color: $color-delete;
+      border: none;
+    }
+  }
+}
+
+.section-update-user {
+  @include display-info(flex, column, center, center);
+  @include spaces($margen-mediano, 0, $gap-ExtraGrande);
+  min-height: calc(100svh - 70px);
+  .button {
+    @extend %button-principal;
+  }
+}
