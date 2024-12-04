@@ -34,6 +34,15 @@ dialog {
       font-weight: $negrita;
     }
   }
+
+  .creator {
+    font-weight: $negrita;
+    color: $color-texto-oscuro;
+  }
+}
+
+.div-dialog-container {
+  margin: $margen-pequeno;
 }
 
 .deleteModal {

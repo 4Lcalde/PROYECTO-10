@@ -3,6 +3,8 @@ import { normalizeDate } from '../../../components/formattedDate/formattedDate'
 import { closeModalClick } from '../closeModal/closeModal'
 
 export const modalInfoEvent = async (event) => {
+  console.log(event.assistants)
+
   const app = document.querySelector('#app')
 
   const eventDate = new Date(event.date)
@@ -42,11 +44,28 @@ export const modalInfoEvent = async (event) => {
   description.className = 'p-dialog'
   description.textContent = event.description
   const creator = document.createElement('p')
-  creator.className = 'p-dialog'
+  creator.className = 'p-dialog creator'
   creator.textContent =
     event.creator && event.creator.name && event.creator.lastname
       ? `Evento creado por ${event.creator.name} ${event.creator.lastname}`
-      : 'Evento de la empresa'
+      : 'Evento creado por la empresa'
+
+  const divAssistants = document.createElement('div')
+  divAssistants.className = 'div-event-assistants'
+
+  const h3Assistants = document.createElement('h3')
+  h3Assistants.className = 'h3-global-title'
+  h3Assistants.textContent = 'Asistentes:'
+
+  divAssistants.append(h3Assistants)
+  if (event.assistants.length === 0) {
+    divAssistants.innerHTML =
+      '<p class="p-dialog">Todavía no hay asistentes confirmados</p>'
+  } else {
+    for (const assistant of event.assistants) {
+      divAssistants.innerHTML += `<p class="p-dialog">${assistant.name} ${assistant.lastname}</p>`
+    }
+  }
   const divButtons = document.createElement('div')
   divButtons.className = 'div-event-buttons'
 
@@ -77,6 +96,7 @@ export const modalInfoEvent = async (event) => {
     lugar,
     divDescription,
     creator,
+    divAssistants,
     divButtons
   )
   divDescription.append(h3Descripcion, description)
