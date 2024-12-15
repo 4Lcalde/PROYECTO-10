@@ -1,0 +1,24 @@
+%button-principal {
+  background-color: $color-fondo-principal;
+  color: $color-texto-claro;
+  @extend %border-principal;
+  padding: $padding-pequeno $padding-mediano;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color $transicion-principal,
+    transform $transicion-principal;
+  box-shadow: $box-shadow;
+  width: auto;
+
+  &:hover {
+    background-color: $color-hover-principal;
+    transform: translateY(-2px);
+    color: $color-texto-claro;
+  }
+
+  &:active {
+    background-color: $color-fondo-secundario-oscuro;
+    transform: translateY(0);
+    box-shadow: $box-shadow;
+  }
+}

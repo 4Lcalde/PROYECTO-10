@@ -1,0 +1,23 @@
+.section-login {
+  @include display-info(flex, column, center, center);
+  @include sizes(100%, 100svh);
+  background-image: url('./public/assets/login.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+#form-Login {
+  margin: auto;
+}
+
+.a-input:hover {
+  font-weight: $negrita;
+}
+
+.form-data {
+  background-color: $color-fondo-principal-claro;
+}
+
+.error {
+  color: $color-delete;
+}

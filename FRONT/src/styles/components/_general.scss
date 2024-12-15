@@ -1,0 +1,58 @@
+body {
+  margin: 0;
+}
+
+a {
+  cursor: pointer;
+}
+select {
+  padding: $padding-pequeno;
+  border: 1px solid $color-borde-select;
+  border-radius: $radio-borde;
+  background-color: $color-fondo-principal;
+  color: $color-texto-principal;
+}
+
+option {
+  background-color: $color-fondo-principal;
+  color: $color-texto-principal;
+  padding: $padding-pequeno;
+  border: none;
+}
+
+option:hover {
+  background-color: $color-fondo-principal;
+}
+
+option:checked {
+  background-color: $color-texto-principal;
+  color: $color-texto-principal;
+}
+
+//TITULOS GENERALES
+.h1-global-title {
+  color: $color-texto-oscuro;
+  text-align: center;
+  margin-top: $margen-mediano;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  font-size: $tamano-fuente-titulo;
+}
+
+.h2-global-title {
+  color: $color-texto-oscuro;
+  text-align: center;
+  margin: $margen-mediano 0;
+  font-size: $tamano-fuente-subTitulo;
+}
+
+.h3-global-title {
+  color: $color-texto-oscuro;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.h4-global-title,
+.a-input {
+  color: $color-texto-principal;
+}

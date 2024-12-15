@@ -1,0 +1,54 @@
+@import '../global/variables';
+
+.form-data {
+  @include display-info(flex, column, center, center);
+  @include spaces(0 auto, $padding-grande, $gap-grande);
+  width: 100%;
+  max-width: 500px;
+  @extend %border-principal;
+  box-shadow: $box-shadow;
+
+  label {
+    color: $color-texto-oscuro;
+    font-size: $negrita;
+  }
+
+  .input-data {
+    color: $color-texto-oscuro;
+    background-color: $color-fondo-principal-claro;
+  }
+
+  .button {
+    @extend %button-principal;
+
+    &:last-child {
+      background-color: $color-delete;
+      border: none;
+    }
+  }
+
+  input,
+  textarea,
+  select {
+    width: 100%;
+    padding: $padding-mediano;
+    @extend %border-principal;
+    border-radius: $radio-borde;
+    font-size: 0.9em;
+    background-color: $color-texto-principal;
+    color: #333;
+    transition: border-color $transicion-principal,
+      box-shadow $transicion-principal;
+    outline: none;
+  }
+
+  textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  label {
+    color: $color-texto-oscuro;
+    font-weight: $negrita;
+  }
+}
