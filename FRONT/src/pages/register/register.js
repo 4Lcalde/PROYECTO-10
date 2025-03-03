@@ -8,7 +8,6 @@ export const register = async () => {
   section.className = 'section-login'
   app.innerHTML = ''
 
-  // Crear elementos del formulario
   const h3 = document.createElement('h3')
   h3.className = 'h3-global-title'
   h3.textContent = 'Registrate'
@@ -40,7 +39,6 @@ export const register = async () => {
   button.className = 'button'
   button.textContent = 'Enviar'
 
-  // Añadir elementos al formulario
   form.append(button, aReturnLogin)
   app.append(section)
   section.append(form)

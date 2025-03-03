@@ -71,9 +71,6 @@ export const modalNewEvent = () => {
     body.append('creator', id)
     body.append('description', description?.value.toLowerCase().trim())
 
-    console.log(today)
-    console.log(normalizeDate(new Date(date.value)))
-
     if (today <= normalizeDate(new Date(date.value))) {
       submitEvent(body, modalNewEvent)
     } else {

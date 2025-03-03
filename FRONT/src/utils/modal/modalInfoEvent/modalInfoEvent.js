@@ -3,8 +3,6 @@ import { normalizeDate } from '../../../components/formattedDate/formattedDate'
 import { closeModalClick } from '../closeModal/closeModal'
 
 export const modalInfoEvent = async (event) => {
-  console.log(event.assistants)
-
   const app = document.querySelector('#app')
 
   const eventDate = new Date(event.date)

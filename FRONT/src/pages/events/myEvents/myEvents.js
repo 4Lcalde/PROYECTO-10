@@ -19,7 +19,6 @@ export const myEvents = async () => {
   )
 
   const select = document.querySelector(`#${dataTemplate.selectId}`)
-  //! divEventContainer es el contenedor de los eventos
   filterEvents(divEventsContainer, 'mine')
 
   select.addEventListener('change', () => {
