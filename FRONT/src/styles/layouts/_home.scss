@@ -1,0 +1,139 @@
+.h1-home {
+  margin-top: 70px;
+  text-align: center;
+  font-size: $tamano-fuente-titulo;
+  color: $color-texto-oscuro;
+}
+
+.home-section {
+  margin: $margen-mediano;
+
+  .article-home {
+    @include display-info(flex, column, center, center);
+    width: 100%;
+    gap: $gap-grande;
+
+    .filtro {
+      display: none;
+    }
+
+    .div-article-home {
+      @include spaces(auto, $padding-pequeno, $gap-pequeno);
+      width: 90%;
+      max-width: 1200px;
+      display: flex;
+      overflow-x: scroll;
+      background-color: $color-fondo-principal-claro;
+      box-shadow: $box-shadow-inset;
+      border-radius: $radio-borde;
+    }
+
+    #buscador {
+      margin-top: $margen-pequeno;
+      align-items: center;
+    }
+  }
+}
+
+.home-div-info {
+  @include sizes(270px, 300px);
+  @include display-info(flex, column, space-between, center);
+  @include spaces($margen-mediano, $padding-mediano, $gap-grande);
+  cursor: pointer;
+  background-color: $color-fondo-principal-claro;
+  color: $color-texto-principal;
+  min-width: 250px;
+  @extend %border-principal;
+  transition: $transicion-principal;
+  box-shadow: $box-shadow;
+  text-align: center;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: $box-shadow-inset;
+  }
+
+  .home-info-name {
+    @include display-info(flex, column, center, center);
+    height: 25%;
+    font-size: 1.4rem;
+    margin-bottom: $margen-pequeno;
+    color: $color-texto-principal;
+
+    &:hover {
+      color: $color-texto-oscuro;
+    }
+  }
+
+  .home-info-img {
+    @include sizes(100%, 70%);
+    overflow: hidden;
+
+    img {
+      @include sizes(100%, 100%);
+      margin: 0;
+      border-radius: $radio-borde;
+      object-fit: cover;
+
+      &:hover {
+        transform: scale(1.2);
+        transition: $transicion-principal;
+      }
+    }
+  }
+
+  .button {
+    @extend %button-principal;
+  }
+}
+
+#random-events {
+  @include display-info(flex, row, center, center);
+}
+
+#buscador {
+  @include sizes(40%, 25px);
+  margin: auto;
+  @extend %border-principal;
+  &::placeholder {
+    color: $color-texto-principal;
+    font-weight: $negrita;
+    text-align: center;
+  }
+}
+
+@media (max-width: 850px) {
+  .home-div-info {
+    width: 200px;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  .article-home {
+    width: 100%;
+  }
+
+  .div-article-home {
+    @include sizes(90%, auto);
+    @include display-info(flex, column, start, center);
+    max-height: 640px;
+    top: 0;
+    box-shadow: $box-shadow-inset;
+    padding: $padding-grande;
+  }
+
+  .home-div-info {
+    view-timeline-name: --reveal;
+    animation-name: showEvent;
+    animation-fill-mode: both;
+    animation-timeline: --reveal;
+    animation-range: entry 10% cover 20%;
+    @include sizes(80%, 50%);
+    margin: 0;
+  }
+
+  .input-search {
+    width: 100%;
+  }
+}

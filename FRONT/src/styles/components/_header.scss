@@ -1,0 +1,262 @@
+#header {
+  @include sizes(100%, 70px);
+  @include display-info(flex, row, space-between, center);
+  background-color: $color-fondo-principal-claro;
+  box-shadow: $box-shadow;
+  padding: $padding-mediano;
+  position: fixed;
+  top: 0;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1001;
+  .logo {
+    width: 50px;
+    cursor: pointer;
+  }
+
+  nav {
+    @include display-info(flex, row, center, center);
+    width: 70%;
+    ul {
+      width: 100%;
+      @include display-info(flex, row, space-around, center);
+      .li-route-header {
+        .a-route-header {
+          font-size: $tamano-fuente-texto;
+          &:hover {
+            @extend %border-principal;
+            background-color: $color-fondo-principal;
+            color: $color-texto-claro;
+            transition: $transicion-principal;
+          }
+        }
+      }
+    }
+  }
+
+  .user-div {
+    @include display-info(flex, row, center, center);
+
+    cursor: pointer;
+
+    .user-img {
+      @include sizes(40px, 40px);
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .div-options {
+      @include spaces($margen-mediano, $padding-mediano, $gap-mediano);
+      @extend %flex-column;
+      @extend %border-principal;
+      width: 100px;
+      position: absolute;
+      top: 70px;
+      right: 0px;
+      z-index: 1001;
+      background-color: $color-fondo-principal-claro;
+      display: none;
+
+      &.activo {
+        display: flex;
+      }
+
+      .button {
+        @extend %button-principal;
+      }
+    }
+  }
+
+  .button-toggle {
+    display: none;
+  }
+}
+
+.header-oculto {
+  opacity: 0.4;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.a-route-header {
+  border: 1px solid transparent;
+}
+
+@media (max-width: 850px) {
+  #header {
+    @include display-info(flex, row, space-between, center);
+    .button-toggle {
+      display: flex;
+      @include sizes(40px, 40px);
+      cursor: pointer;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background-color: transparent;
+      border: none;
+
+      .span-toggle {
+        @include sizes(70%, 5px);
+        background-color: $color-fondo-principal-oscuro;
+        display: block;
+        border-radius: $radio-borde;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: transform 0.5s, width 0.5s;
+      }
+
+      .l1 {
+        transform: translate(-50%, -15px);
+      }
+
+      .l3 {
+        transform: translate(-50%, 10px);
+      }
+
+      .activado .l1 {
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      .activado .l2 {
+        width: 0px;
+      }
+
+      .activado .l3 {
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+
+    .nav-header {
+      @include sizes(100%, 100%);
+      position: fixed;
+      display: none;
+      align-items: flex-start;
+      right: 0;
+      top: 70px;
+      background-color: $color-fondo-principal-claro;
+
+      &.toggle {
+        display: flex;
+      }
+
+      .ul-header {
+        @include display-info(flex, column, center, center);
+        width: 100%;
+        gap: $gap-grande;
+        padding-top: $padding-grande;
+      }
+    }
+
+    .user-div {
+      display: flex;
+      width: 100%;
+      position: fixed;
+      top: 230px;
+
+      &.toggle {
+        display: flex;
+      }
+
+      .div-options {
+        @include display-info(flex, row, center, center);
+        border: none;
+        width: 100%;
+        top: 30px;
+        margin: 0;
+        padding: 0;
+        display: none;
+      }
+    }
+  }
+
+  .user-img {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  #header {
+    position: absolute;
+    background-color: transparent;
+    box-shadow: none;
+    top: 0;
+    height: 0;
+    padding: 0;
+
+    &.header-oculto {
+      transform: none;
+      opacity: 1;
+    }
+
+    .logo {
+      display: none;
+    }
+
+    .nav-header {
+      display: none;
+      position: fixed;
+      align-items: flex-start;
+      right: 0;
+      top: 0;
+      height: 100%;
+      background-color: $color-fondo-principal-claro;
+
+      .ul-header {
+        position: fixed;
+        top: 90px;
+      }
+    }
+    .button-toggle {
+      visibility: visible;
+      position: fixed;
+      top: 40px;
+      right: 20px;
+      z-index: 1000;
+      @include display-info(flex, row, center, center);
+      @include sizes(40px, 40px);
+      background-color: $color-fondo-secundario-oscuro;
+      border-radius: 50%;
+      padding: $padding-grande;
+
+      .span-toggle {
+        display: block;
+        @include sizes(60%, 3px);
+
+        background-color: $color-fondo-principal-claro;
+        border-radius: 2px;
+        position: absolute;
+        left: auto;
+        transition: transform 0.3s ease, width 0.3s ease;
+
+        &.l1 {
+          transform: translateY(-10px);
+        }
+
+        &.l2 {
+          transform: translateY(0);
+        }
+
+        &.l3 {
+          transform: translateY(10px);
+        }
+      }
+
+      &.activado {
+        .l1 {
+          transform: translateY(0) rotate(45deg);
+        }
+
+        .l2 {
+          width: 0;
+        }
+
+        .l3 {
+          transform: translateY(0) rotate(-45deg);
+        }
+      }
+    }
+  }
+}

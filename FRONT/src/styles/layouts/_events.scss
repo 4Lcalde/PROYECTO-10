@@ -1,0 +1,189 @@
+.my-events-section {
+  .event-myArticle-container {
+    margin: $margen-mediano;
+    overflow-x: scroll;
+
+    .div-myFilter-container {
+      #select-myFilter {
+        color: $color-texto-claro;
+
+        option {
+          color: $color-texto-claro;
+        }
+      }
+    }
+
+    .div-myEvents-container {
+      @include display-info(flex, row, start, center);
+      @include spaces($margen-mediano, 0, $gap-mediano);
+      overflow: hidden;
+      overflow-x: scroll;
+      background-color: $color-fondo-principal-claro;
+      box-shadow: $box-shadow-inset;
+      border-radius: $radio-borde;
+    }
+  }
+}
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.all-events-section {
+  margin: $margen-mediano;
+
+  .event-article-container {
+    margin-top: $margen-mediano;
+
+    .div-events-container {
+      @include display-info(flex, row, start, center);
+      @include spaces($margen-mediano, 0, $gap-mediano);
+      overflow-x: scroll;
+      background-color: $color-fondo-principal-claro;
+      box-shadow: $box-shadow-inset;
+      border-radius: $radio-borde;
+    }
+
+    #select-all-filter {
+      color: $color-texto-claro;
+
+      option {
+        color: $color-texto-claro;
+      }
+    }
+  }
+}
+
+.create-event-section {
+  @include display-info(flex, column, start, center);
+  @include spaces($margen-mediano 0, 0, $gap-mediano);
+  width: 100%;
+  background-color: $color-fondo-principal-claro;
+
+  .button {
+    @extend %button-principal;
+  }
+}
+
+.div-event {
+  cursor: pointer;
+  @include display-info(flex, column, space-between, center);
+  @include spaces($margen-mediano, $padding-mediano, 0);
+  @include sizes(300px, 300px);
+  background-color: $color-fondo-principal-claro;
+  @extend %border-principal;
+  min-width: 300px;
+  box-shadow: $box-shadow;
+
+  &:hover {
+    box-shadow: $box-shadow;
+    transform: translateY(-5px);
+    transition: $transicion-principal;
+  }
+
+  .event-info-container {
+    @include display-info(block, column, space-between, center);
+    @include sizes(100%, 25%);
+    text-align: center;
+    margin-bottom: $margen-mediano;
+    font-size: $tamano-fuente-texto;
+    color: $color-hover-principal;
+    gap: $gap-mediano;
+
+    .p-info-container {
+      margin: 0;
+      font-weight: $negrita;
+      word-wrap: break-word;
+    }
+  }
+
+  .img-event-container {
+    @include sizes(100%, 60%);
+    overflow: hidden;
+    gap: $gap-grande;
+
+    img {
+      @include sizes(100%, 100%);
+      margin: 0;
+      border-radius: $radio-borde;
+      object-fit: contain;
+    }
+  }
+}
+
+.div-event-buttons {
+  @include display-info(flex, row, center, center);
+  margin-top: $margen-mediano;
+  gap: $margen-pequeno;
+  flex-wrap: wrap;
+
+  .button {
+    @extend %button-principal;
+
+    &:last-child {
+      background-color: $color-delete;
+      border: none;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .div-event {
+    width: 250px;
+    min-width: 250px;
+  }
+}
+
+@media (max-width: 500px) {
+  .my-events-section {
+    .event-myArticle-container {
+      .div-myEvents-container {
+        flex-direction: column;
+        padding: $padding-grande 0;
+      }
+    }
+  }
+
+  .all-events-section {
+    .event-article-container {
+      .div-events-container {
+        flex-direction: column;
+        max-height: 700px;
+      }
+    }
+  }
+
+  .event-article-container {
+    width: 100%;
+    overflow-x: hidden;
+    margin-bottom: $margen-mediano;
+  }
+
+  @keyframes showEvent {
+    from {
+      transform: scale(0.1);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  .div-article-home {
+    width: 100%;
+    height: 800px;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    box-shadow: $box-shadow-inset;
+  }
+
+  .home-div-info {
+    width: 90%;
+    margin: 0;
+  }
+
+  .input-search {
+    width: 100%;
+  }
+}

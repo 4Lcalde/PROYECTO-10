@@ -1,0 +1,118 @@
+dialog {
+  margin: auto;
+  max-width: 500px;
+  width: 90%;
+  padding: $padding-grande;
+  border-radius: $radio-borde * 2;
+  box-shadow: $box-shadow;
+  background: linear-gradient(
+    145deg,
+    $color-fondo-principal,
+    $color-fondo-secundario-oscuro
+  );
+  color: $color-texto-claro;
+  transition: opacity $transicion-principal, transform $transicion-principal;
+  transform: translateY(-10px);
+  opacity: 0;
+  text-align: center;
+  overflow: hidden;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+
+  &[open] {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .span-close {
+    cursor: pointer;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    font-size: 24px;
+    font-weight: $negrita;
+    color: $color-texto-claro;
+    transition: color $transicion-principal, transform 0.2s;
+
+    &:hover {
+      color: $color-delete;
+      transform: scale(1.2);
+    }
+  }
+
+  .p-info {
+    color: $color-fondo-principal;
+  }
+  .div-dialog-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $gap-grande;
+    padding: $padding-mediano;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: $radio-borde * 2;
+    box-shadow: $box-shadow-inset;
+  }
+
+  .img-dialog {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: $box-shadow;
+    border: 4px solid $color-hover-principal;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .p-dialog {
+    color: $color-texto-claro;
+    font-size: $tamano-fuente-texto;
+    font-weight: $negrita;
+    line-height: 1.5;
+
+    span {
+      color: $color-texto-oscuro;
+      text-transform: capitalize;
+    }
+  }
+
+  .creator {
+    font-weight: $negrita;
+    color: $color-texto-oscuro;
+  }
+}
+
+.deleteModal {
+  @include display-info(flex, column, center, center);
+  @extend %border-principal;
+  padding: $padding-grande;
+  border-radius: $radio-borde * 2;
+  box-shadow: $box-shadow;
+  background: linear-gradient(
+    135deg,
+    $color-fondo-principal-claro,
+    $color-fondo-principal
+  );
+  transition: transform $transicion-principal,
+    background-color $transicion-principal;
+  color: $color-texto-oscuro;
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: $color-hover-principal;
+    color: $color-texto-claro;
+  }
+
+  .div-buttons-user-page {
+    margin-top: $margen-mediano;
+    display: flex;
+    gap: $gap-mediano;
+    justify-content: center;
+  }
+}

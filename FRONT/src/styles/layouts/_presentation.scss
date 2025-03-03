@@ -1,0 +1,98 @@
+.article-presentation {
+  height: 100svh;
+  padding: $padding-grande;
+  @include display-info(flex, column, center, center);
+  background-image: url('./public/assets/nave.jpg');
+
+  @extend %fondo-movil;
+  .h1-global-title,
+  .h2-global-title {
+    color: $color-texto-claro;
+  }
+}
+
+.article-hero {
+  @include sizes(100%, 80svh);
+  @include display-info(flex, row, space-around, center);
+
+  overflow: hidden;
+  .div-text-hero {
+    width: 45%;
+    .h2-global-title {
+      font-size: $tamano-fuente-titulo-pequeño;
+    }
+  }
+
+  .div-img-hero {
+    text-align: center;
+    width: 35%;
+
+    .img-hero {
+      width: 100%;
+      overflow: hidden;
+    }
+  }
+}
+
+.article-values {
+  @include sizes(auto, auto);
+  background-color: $color-fondo-principal-oscuro;
+
+  .div-values-global {
+    padding: $padding-grande;
+    .h3-global-title {
+      color: $color-texto-claro;
+      font-size: $tamano-fuente-texto-grande;
+    }
+
+    .div-values-container {
+      @include display-info(flex, row, center, center);
+      flex-wrap: wrap;
+      @include spaces(0, $padding-grande, $gap-grande);
+      .value-element {
+        @include display-info(flex, row, space-between, center);
+        @include sizes(250px, 100px);
+        overflow: hidden;
+        @extend %border-principal;
+        background-color: $color-fondo-secundario-oscuro;
+        .text-value-container {
+          width: 55%;
+          text-align: center;
+
+          .value-text {
+            font-weight: $negrita;
+            color: $color-texto-claro;
+          }
+        }
+
+        .img-container {
+          width: 45%;
+          object-fit: contain;
+          overflow: hidden;
+
+          .img-value {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  .article-hero {
+    max-width: 800px;
+    flex-direction: column;
+    height: auto;
+    gap: $gap-grande;
+    margin: 0;
+
+    .div-text-hero {
+      width: 80%;
+    }
+
+    .div-img-hero {
+      width: 80%;
+    }
+  }
+}

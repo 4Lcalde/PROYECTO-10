@@ -1,0 +1,10 @@
+#footer {
+  bottom: 0;
+  @include display-info(flex, row, center, center);
+  background-color: $color-fondo-secundario-oscuro;
+  color: $color-texto-claro;
+  padding: $padding-mediano;
+  height: 100px;
+  font-weight: $negrita;
+  text-align: center;
+}

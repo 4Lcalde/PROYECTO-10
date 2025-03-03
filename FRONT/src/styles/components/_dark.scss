@@ -1,0 +1,152 @@
+@import '../global/variables';
+
+body {
+  transition: all 0.5s;
+
+  &.dark {
+    background-color: $color-fondo-principal-oscuro;
+
+    //HEADER
+    #header {
+      background-color: $color-fondo-principal-oscuro;
+      color: $color-texto-claro;
+
+      .nav-header {
+        background-color: $color-fondo-principal-oscuro;
+        color: $color-texto-claro;
+      }
+
+      .user-div {
+        background-color: $color-fondo-principal-oscuro;
+        .div-options {
+          background-color: $color-fondo-principal-oscuro;
+        }
+      }
+
+      .button-toggle {
+        span {
+          background-color: $color-fondo-principal-claro;
+        }
+      }
+    }
+
+    // EVENTS
+
+    .my-events-section {
+      .event-myArticle-container {
+        .div-myEvents-container {
+          background-color: $color-fondo-secundario-oscuro;
+        }
+      }
+    }
+    .all-events-section {
+      .event-article-container {
+        .div-events-container {
+          background-color: $color-fondo-secundario-oscuro;
+        }
+      }
+    }
+
+    .div-event {
+      background-color: $color-fondo-principal-oscuro;
+      box-shadow: $box-shadow-dark;
+    }
+
+    .create-event-section {
+      background-color: $color-fondo-principal-oscuro;
+    }
+
+    //HOME
+    .article-home {
+      .div-article-home {
+        background-color: $color-fondo-secundario-oscuro;
+        .home-div-info {
+          background-color: $color-fondo-principal-oscuro;
+          box-shadow: $box-shadow-dark;
+        }
+      }
+    }
+
+    //FORM
+    .form-data {
+      background-color: $color-fondo-principal-oscuro;
+      color: $color-texto-claro;
+      box-shadow: $box-shadow-dark;
+      .input-data {
+        background-color: $color-fondo-principal-oscuro;
+        color: $color-texto-claro;
+
+        &::placeholder {
+          color: $color-texto-claro;
+        }
+      }
+
+      label {
+        color: $color-texto-claro;
+      }
+
+      .div-buttons-user-page {
+        .button {
+          &:last-child {
+            background-color: $color-delete;
+            border: none;
+          }
+        }
+      }
+    }
+
+    //BUTTONS
+    .button {
+      @extend %button-principal;
+    }
+
+    //TEXTOS
+
+    .h1-home,
+    .h2-global-title {
+      color: $color-texto-claro;
+    }
+
+    .p-info-container,
+    .p-user-info {
+      color: $color-texto-claro;
+    }
+
+    .home-info-name {
+      color: $color-texto-claro;
+    }
+
+    #modalInfoUser,
+    #modalInfoEvent,
+    #modalNewEvent,
+    #deleteUserModal {
+      background-color: $color-fondo-principal-oscuro;
+      color: $color-texto-claro;
+    }
+
+    //BUSCADORES Y SELECTS
+
+    #buscador {
+      background-color: $color-fondo-secundario-oscuro;
+      color: $color-texto-claro;
+      &::placeholder {
+        color: $color-texto-claro;
+      }
+    }
+
+    #select-myFilter,
+    #select-all-filter {
+      background-color: $color-fondo-secundario-oscuro;
+      color: $color-texto-claro;
+
+      option {
+        color: $color-texto-claro;
+      }
+    }
+
+    #footer {
+      background-color: $color-fondo-secundario-oscuro;
+      color: $color-texto-claro;
+    }
+  }
+}

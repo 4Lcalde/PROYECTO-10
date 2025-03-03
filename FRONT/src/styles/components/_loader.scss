@@ -1,0 +1,35 @@
+@keyframes loader {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.loader {
+  @include display-info(flex, column, center, center);
+  @include sizes(100px, 100px);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: auto;
+}
+.loader::after,
+.loader::before {
+  animation: loader 2s linear infinite;
+  content: '';
+  border: 10px solid $color-fondo-principal;
+  @include sizes(100px, 100px);
+  position: absolute;
+  border-radius: 50%;
+}
+
+.loader::after {
+  opacity: 0;
+  animation-delay: 1s;
+}

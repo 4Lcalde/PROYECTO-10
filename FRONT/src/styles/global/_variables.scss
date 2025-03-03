@@ -1,0 +1,55 @@
+/* Fondos */
+$color-fondo-principal: #007bff;
+$color-fondo-principal-oscuro: #212529;
+$color-fondo-secundario-oscuro: #004085;
+$color-fondo-principal-claro: #f8f9fa;
+$color-delete: #ff0000;
+
+/* Textos */
+$color-texto-principal: #007bff;
+$color-texto-claro: #f8f9fa;
+$color-texto-oscuro: #004085;
+
+// Bordes
+$color-borde-principal: #007bff;
+$color-borde-select: #004085;
+$color-hover-principal: #f8f9fa;
+$borde-principal: 1px solid $color-borde-principal;
+$radio-borde: 5px;
+
+/* Padding */
+$padding-pequeno: 5px;
+$padding-mediano: 10px;
+$padding-grande: 20px;
+$padding-extraGrande: 20px;
+
+/* Margin */
+$margen-pequeno: 10px;
+$margen-mediano: 20px;
+$margen-grande: 40px;
+
+/* Gap */
+$gap-pequeno: 5px;
+$gap-mediano: 10px;
+$gap-grande: 15px;
+$gap-ExtraGrande: 35px;
+
+/* Color hoover principal */
+$color-hover-principal: #007bff;
+$color-hover-secundario: #f8f9fa;
+
+/* Tipografía y tamaños */
+$tamano-fuente-texto: 1.3em;
+$tamano-fuente-texto-grande: 1.6em;
+$tamano-fuente-subTitulo: 2em;
+$tamano-fuente-titulo-pequeño: 3em;
+$tamano-fuente-titulo: 4em;
+
+/* Sombra y transiciones */
+$box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+$box-shadow-dark: 0 0 5px rgba(255, 255, 255, 0.4);
+$box-shadow-inset: inset 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+$transicion-principal: 0.3s ease;
+
+/* Negrita */
+$negrita: 600;
